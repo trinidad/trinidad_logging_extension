@@ -1,0 +1,39 @@
+Trinidad Logging Extension
+==========================
+
+# DESCRIPTION
+
+Extension to enhance the Trinidad's logging based on Apache Log4j(http://logging.apache.org/log4j).
+
+# INSTALLATION
+
+jruby -S gem install trinidad_logging_extension
+
+# CONFIGURATION
+
+The extension needs a configuration file for log4j. The default path for
+this file is 'config/trinidad-logging.properties' but it can be overrided
+into the Trinidad's configuration file.
+
+To enable the extension add this to your trinidad.yml:
+
+---
+  extensions:
+    logging:
+      config: other_properties.properties # This field is optional
+
+This is an example of configuration file extracted from the Tomcat's documentation:
+
+  log4j.rootLogger=INFO, R 
+  log4j.appender.R=org.apache.log4j.RollingFileAppender 
+  log4j.appender.R.File=log/trinidad.log
+  log4j.appender.R.MaxFileSize=10MB 
+  log4j.appender.R.MaxBackupIndex=10 
+  log4j.appender.R.layout=org.apache.log4j.PatternLayout 
+  log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
+
+You can find further information on how to write your own extension in the wiki: http://wiki.github.com/calavera/trinidad/extensions
+
+# Copyright
+
+Copyright (c) 2010 David Calavera. See LICENSE for details.
