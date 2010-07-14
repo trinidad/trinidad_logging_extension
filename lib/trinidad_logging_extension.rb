@@ -8,7 +8,7 @@ module Trinidad
     require File.expand_path('../trinidad-libs/juli-adapters', __DIR__)
     require File.expand_path('../trinidad-libs/log4j-1.2.16', __DIR__)
 
-    class LoggingWebAppExtension < WebAppExtension
+    class LoggingServerExtension < ServerExtension
       def configure(tomcat, app_context)
         @options[:config] ||= 'config/trinidad-logging.properties'
         java.lang.System.set_property('log4j.configuration', 
