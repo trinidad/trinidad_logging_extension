@@ -9,7 +9,7 @@ module Trinidad
     require File.expand_path('../trinidad-libs/log4j-1.2.16', __DIR__)
 
     class LoggingServerExtension < ServerExtension
-      def configure(tomcat, app_context)
+      def configure(tomcat)
         @options[:config] ||= 'config/trinidad-logging.properties'
         java.lang.System.set_property('log4j.configuration', 
           java.io.File.new(File.expand_path(@options[:config])).to_url.to_s)
