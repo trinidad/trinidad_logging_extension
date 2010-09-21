@@ -1,7 +1,7 @@
 module Trinidad
   module Extensions
     module Logging
-      VERSION = '0.2.0'
+      VERSION = '0.2.1'
     end
 
     __DIR__ = File.dirname(__FILE__)
