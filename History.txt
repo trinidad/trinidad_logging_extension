@@ -1,4 +1,4 @@
-== 0.3.0 (2011-08-18)
+== 1.0.0 (2011-08-18)
 
 * Route log through slf4j and add support for logback and java.util.logging
 

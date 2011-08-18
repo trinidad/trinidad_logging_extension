@@ -1,7 +1,7 @@
 module Trinidad
   module Extensions
     module Logging
-      VERSION = '0.2.1'
+      VERSION = '1.0.0'
     end
 
     require 'trinidad_logging_extension/jars'
