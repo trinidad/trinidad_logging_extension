@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   ## the sub! line in the Rakefile
   s.name              = 'trinidad_logging_extension'
   s.version           = '0.2.1'
-  s.date              = '2010-09-22'
+  s.date              = '2011-08-18'
   s.rubyforge_project = 'trinidad_logging_extension'
 
   ## Make sure your summary is short. The description may be as long
@@ -57,8 +57,16 @@ Gem::Specification.new do |s|
     README
     Rakefile
     lib/trinidad_logging_extension.rb
+    lib/trinidad_logging_extension/jars.rb
+    trinidad-libs/jcl-over-slf4j-1.6.1.jar
+    trinidad-libs/jul-to-slf4j-1.6.1.jar
     trinidad-libs/juli-adapters.jar
     trinidad-libs/log4j-1.2.16.jar
+    trinidad-libs/logback-classic-0.9.29.jar
+    trinidad-libs/logback-core-0.9.29.jar
+    trinidad-libs/slf4j-api-1.6.1.jar
+    trinidad-libs/slf4j-jdk14-1.6.1.jar
+    trinidad-libs/slf4j-log4j12-1.6.1.jar
     trinidad_logging_extension.gemspec
   ]
   # = MANIFEST =
