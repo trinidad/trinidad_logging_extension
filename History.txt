@@ -1,3 +1,7 @@
+== 1.0.1 (2012-06-06)
+
+* Add log4j-extras for rolling appenders
+
 == 1.0.0 (2011-08-18)
 
 * Route log through slf4j and add support for logback and java.util.logging
