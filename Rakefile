@@ -13,7 +13,7 @@ def name
 end
 
 def version
-  line = File.read("lib/#{name}.rb")[/^\s*VERSION\s*=\s*.*/]
+  line = File.read("lib/#{name}/version.rb")[/^\s*VERSION\s*=\s*.*/]
   line.match(/.*VERSION\s*=\s*['"](.*)['"]/)[1]
 end
 
@@ -110,14 +110,7 @@ task :gemspec => :validate do
   # read spec file and split out manifest section
   spec = File.read(gemspec_file)
   head, manifest, tail = spec.split("  # = MANIFEST =\n")
-
-  # replace name version and date
-  replace_header(head, :name)
-  replace_header(head, :version)
-  replace_header(head, :date)
-  #comment this out if your rubyforge_project has a different name
-  replace_header(head, :rubyforge_project)
-
+  
   # determine file list from git ls-files
   files = `git ls-files`.
     split("\n").

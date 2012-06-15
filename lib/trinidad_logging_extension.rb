@@ -1,13 +1,9 @@
+require 'trinidad_logging_extension/jars'
+require 'trinidad_logging_extension/version'
 module Trinidad
   module Extensions
-    module Logging
-      VERSION = '1.0.0'
-    end
-
-    require 'trinidad_logging_extension/jars'
-
     class LoggingServerExtension < ServerExtension
-      include Trinidad::Extensions::LoggingJars
+      include Trinidad::Extensions::Logging::Jars
 
       def configure(tomcat)
         @options[:logging_system] ||= 'log4j'

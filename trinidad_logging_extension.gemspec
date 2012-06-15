@@ -1,9 +1,13 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require 'trinidad_logging_extension/version'
 ## This is the rakegem gemspec template. Make sure you read and understand
 ## all of the comments. Some sections require modification, and others can
 ## be deleted if you don't need them. Once you understand the contents of
 ## this file, feel free to delete any comments that begin with two hash marks.
 ## You can find comprehensive Gem::Specification documentation, at
 ## http://docs.rubygems.org/read/chapter/20
+
 Gem::Specification.new do |s|
   s.specification_version = 2 if s.respond_to? :specification_version=
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -13,8 +17,7 @@ Gem::Specification.new do |s|
   ## If your rubyforge_project name is different, then edit it and comment out
   ## the sub! line in the Rakefile
   s.name              = 'trinidad_logging_extension'
-  s.version           = '1.0.1'
-  s.date              = '2011-08-18'
+  s.version           = Trinidad::Extensions::Logging::VERSION
   s.rubyforge_project = 'trinidad_logging_extension'
 
   ## Make sure your summary is short. The description may be as long
@@ -58,6 +61,7 @@ Gem::Specification.new do |s|
     Rakefile
     lib/trinidad_logging_extension.rb
     lib/trinidad_logging_extension/jars.rb
+    trinidad-libs/apache-log4j-extras-1.1.jar
     trinidad-libs/jcl-over-slf4j-1.6.1.jar
     trinidad-libs/jul-to-slf4j-1.6.1.jar
     trinidad-libs/juli-adapters.jar
