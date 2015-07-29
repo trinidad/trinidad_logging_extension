@@ -7,14 +7,14 @@ module Trinidad
 
       def configure(tomcat)
         @options[:logging_system] ||= 'log4j'
-        @options[:config] ||= @options[:logging_system].eql?('logback') ?
+        @options[:config] ||= (@options[:logging_system] =~ /logback|log4j/i) ?
            'config/trinidad-logging.xml' : 'config/trinidad-logging.properties'
 
         require_common_jars
 
         case @options[:logging_system]
         when 'log4j'
-          set_config_property 'log4j.configuration'
+          set_config_property 'log4j.configurationFile'
           require_log4j_jars
           configure_jul_bridge
         when 'logback'
