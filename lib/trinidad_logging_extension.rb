@@ -14,7 +14,7 @@ module Trinidad
 
         case @options[:logging_system]
         when 'log4j'
-          set_config_property 'log4j.configuration'
+          set_config_property 'log4j.configurationFile'
           require_log4j_jars
           configure_jul_bridge
         when 'logback'
