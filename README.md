@@ -18,7 +18,7 @@ The extension needs a configuration file for the chosen logging system.
 The file can be overridden by putting one into your *config* directory:
 
  * Log4j (Default)
-   Default configuration file: 'config/trinidad-logging.properties'
+   Default configuration file: 'config/trinidad-logging.xml'
  * Logback
    Default configuration file: 'config/trinidad-logging.xml'
  * java.util.logging
@@ -38,13 +38,14 @@ To enable the extension add it to your Trinidad configuration e.g. *trinidad.yml
 Here's a (.properties) configuration example extracted from the Tomcat's doc:
 
 ```
-log4j.rootLogger=INFO, R 
-log4j.appender.R=org.apache.log4j.RollingFileAppender 
-log4j.appender.R.File=log/trinidad.log
-log4j.appender.R.MaxFileSize=10MB 
-log4j.appender.R.MaxBackupIndex=10 
-log4j.appender.R.layout=org.apache.log4j.PatternLayout 
-log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
+handlers = org.apache.juli.FileHandler, java.util.logging.ConsoleHandler
+
+org.apache.juli.FileHandler.level = FINE
+org.apache.juli.FileHandler.directory = ${catalina.base}/logs
+org.apache.juli.FileHandler.prefix = servlet-examples.
+
+java.util.logging.ConsoleHandler.level = FINE
+java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 ```
 
 You can find further information on how to write your own extension in the wiki: 
