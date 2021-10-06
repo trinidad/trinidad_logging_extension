@@ -6,7 +6,7 @@ module Trinidad
       module Jars
         SLF4J_VERSION = '1.6.1'
         LOG4J_VERSION = '1.2.17'
-        LOG4J_EXTRAS_VERSION = '1.1'
+        LOG4J_EXTRAS_VERSION = '1.2.17'
         LOGBACK_VERSION = '0.9.29'
 
         def require_common_jars
